@@ -11,4 +11,4 @@ const getPathNames = meta => {
   };
 };
 
-export default getPathNames;
+export { getPathNames };
