@@ -15,3 +15,16 @@ import getPathNames from 'esm-pathnames';
 
 const { __dirname, __filename } = getPathNames(import.meta);
 ```
+
+## package.json
+
+You have to add the `type` field to `package.json` as shown below.
+
+```json
+{
+  "name": "package name",
+  "version": "0.1.0",
+  ...
+  "type": "module"
+}
+```
