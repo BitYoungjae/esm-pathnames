@@ -1,7 +1,7 @@
 {
   "name": "esm-pathnames",
   "version": "1.0.12",
-  "description": "You can use __dirname and __filenme when using ESM",
+  "description": "You can use __dirname and __filename when using ESM",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "files": [
