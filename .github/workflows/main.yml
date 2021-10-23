@@ -23,6 +23,7 @@ jobs:
           yarn install
           yarn eslint ./src
   build:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -40,7 +41,6 @@ jobs:
           yarn install --frozen-lockfile
           yarn build
           npm publish
-          git commit -am "New Release"
           git push
         env:
           github-token: ${{secrets.GITHUB_TOKEN}}
