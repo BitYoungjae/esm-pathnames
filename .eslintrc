@@ -6,8 +6,5 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
     "prettier"
-  ],
-  "rules": {
-    "@typescript-eslint/no-explicit-any": 0
-  }
+  ]
 }
