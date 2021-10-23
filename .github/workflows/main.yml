@@ -28,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: ${{github.events.release.target_commitish}}
+          ref: ${{github.event.release.target_commitish}}
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
