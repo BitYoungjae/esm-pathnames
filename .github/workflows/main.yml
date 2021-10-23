@@ -33,13 +33,13 @@ jobs:
           node-version: '16'
           registry-url: https://registry.npmjs.org
       - run: |
+          git config --global user.name "BitYoungjae"
+          git config --global user.eamil "bityoungjae@gmail.com"
           npm version ${{github.event.release.tag_name}}
           npm i -g yarn
           yarn install --frozen-lockfile
           yarn build
           npm publish
-          git config --global user.name "BitYoungjae"
-          git config --global user.eamil "bityoungjae@gmail.com"
           git commit -am "New Release"
           git push
         env:
