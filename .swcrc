@@ -1,0 +1,13 @@
+{
+  "test": ".*.ts$",
+  "jsc": {
+    "parser": {
+      "syntax": "typescript",
+      "tsx": false
+    },
+    "target": "es2016"
+  },
+  "module": {
+    "type": "commonjs"
+  }
+}
