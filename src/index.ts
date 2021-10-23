@@ -8,11 +8,13 @@ import { dirname } from 'path';
  */
 const getPathNames = (
   meta: ImportMeta,
-): { __filename: number; __dirname: string } => {
+  a: number
+): { __filename: string; __dirname: string } => {
   const __filename = fileURLToPath(meta.url);
   const __dirname = dirname(__filename);
 
   return {
+    
     __filename,
     __dirname,
   };
