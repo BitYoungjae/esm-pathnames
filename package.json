@@ -4,12 +4,11 @@
   "description": "You can use __dirname and __filenme when using ESM",
   "main": "/build/index.js",
   "files": [
-    "/build/index.js",
-    "/build/index.d.ts"
+    "/index.js",
+    "/index.d.ts"
   ],
-  "types": "/build/index.d.ts",
   "scripts": {
-    "swc-build": "swc ./src -d build",
+    "swc-build": "swc ./src -d .",
     "emit-declaration": "tsc",
     "build": "yarn swc-build && yarn emit-declaration"
   },
