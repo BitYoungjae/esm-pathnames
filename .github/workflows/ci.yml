@@ -11,7 +11,7 @@ on:
       - "!master"
 
 jobs:
-  lint:
+  pr-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -20,6 +20,9 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
-      - run: |
-          yarn --frozen-lockfile
-          yarn eslint ./src
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+      - name: eslint
+        run: yarn eslint ./src
+      - name: Type check
+        run: yarn tsc --noemit --emitDeclarationOnly false

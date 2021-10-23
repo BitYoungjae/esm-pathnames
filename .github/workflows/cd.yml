@@ -5,7 +5,7 @@ on:
     types: [published]
 
 jobs:
-  lint:
+  pre-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -14,12 +14,14 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
-      - run: |
-          npm i -g yarn
-          yarn install
-          yarn eslint ./src
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+      - name: eslint
+        run: yarn eslint ./src
+      - name: Type check
+        run: yarn tsc --noemit --emitDeclarationOnly false
   build-and-publish:
-    needs: lint
+    needs: pre-check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
