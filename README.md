@@ -1,6 +1,6 @@
 # ESM-PathNames
 
-You can use `__dirname` and `__filename` when using ESM
+You can use `__dirname` and `__filename` when using ESM(ECMAScript module).
 
 ## Install
 
@@ -16,15 +16,6 @@ import { getPathNames } from 'esm-pathnames';
 const { __dirname, __filename } = getPathNames(import.meta);
 ```
 
-## package.json
+## Restrictions
 
-You have to add the `type` field to `package.json` as shown below.
-
-```json
-{
-  "name": "package name",
-  "version": "0.1.0",
-  ...
-  "type": "module"
-}
-```
+- The browser environment is not yet supported.
